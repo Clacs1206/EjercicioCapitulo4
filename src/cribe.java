@@ -8,7 +8,7 @@ public class cribe
         if (max >= 2) {
 // Declaraciones
             int dim = tamArray(max);
-            boolean[] esPrimo = new boolean[dim];
+            boolean[] esPrimo = getPrimo(dim);
 // Inicializar el array
             for (i=0; i<dim; i++)
 
@@ -40,6 +40,11 @@ public class cribe
             return new int[0];
 // Vector vacío
         }
+    }
+
+    public static boolean[] getPrimo(int dim) {
+        boolean[] esPrimo = new boolean[dim];
+        return esPrimo;
     }
 
     private static int tamArray(int max) {
