@@ -11,7 +11,6 @@ public class cribe
             boolean[] esPrimo = getPrimo(dim);
 // Inicializar el array
             for (i=0; i<dim; i++)
-
                 esPrimo[i] = true;
 // Eliminar el 0 y el 1, que no son primos
             esPrimo[0] = esPrimo[1] = false;
@@ -19,8 +18,7 @@ public class cribe
             for (i=2; i<Math.sqrt(dim)+1; i++) {
                 if (esPrimo[i]) {
 // Eliminar los múltiplos de i
-                    for (j=2*i; j<dim; j+=i)
-                        esPrimo[j] = false;
+                    elimprimos(i, dim, esPrimo);
                 }
             }
 // ¿Cuántos primos hay?
@@ -42,7 +40,14 @@ public class cribe
         }
     }
 
+    private static void elimprimos(int i, int dim, boolean[] esPrimo) {
+        int j;
+        for (j=2* i; j< dim; j+= i)
+            esPrimo[j] = false;
+    }
+
     public static boolean[] getPrimo(int dim) {
+
         boolean[] esPrimo = new boolean[dim];
         return esPrimo;
     }
