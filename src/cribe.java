@@ -7,10 +7,11 @@ public class cribe
         int i,j;
         if (max >= 2) {
 // Declaraciones
-            int dim = max + 1; // Tamaño del array
+            int dim = tamArray(max);
             boolean[] esPrimo = new boolean[dim];
 // Inicializar el array
             for (i=0; i<dim; i++)
+
                 esPrimo[i] = true;
 // Eliminar el 0 y el 1, que no son primos
             esPrimo[0] = esPrimo[1] = false;
@@ -40,6 +41,12 @@ public class cribe
 // Vector vacío
         }
     }
+
+    private static int tamArray(int max) {
+        int dim = max + 1; // Tamaño del array
+        return dim;
+    }
+
     public static void main(String[] args) {
         Scanner teclado=new Scanner(System.in);
         System.out.println("Introduce el número para la criba de Erastótenes:");
